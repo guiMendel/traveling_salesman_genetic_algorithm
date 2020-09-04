@@ -1,1 +1,82 @@
-<mxfile host="app.diagrams.net" modified="2020-09-04T21:06:55.110Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.22 Safari/537.36" version="13.6.6" etag="y1vmhLdXZEQO_MwjYEOM" type="github"><diagram id="RmVg-uAlyQOc6iuS-p0Y">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-09-04T21:50:33.064Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.22 Safari/537.36" etag="wbtdJHdj6e4fgpmhCbeZ" version="13.6.6" type="github">
+  <diagram id="RmVg-uAlyQOc6iuS-p0Y" name="Page-1">
+    <mxGraphModel dx="981" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tQTgviacLXU592D-nfOq-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-1" target="tQTgviacLXU592D-nfOq-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-1" value="Inicializar população aleatoriamente, tamanho N" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-3" target="tQTgviacLXU592D-nfOq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-3" value="Cálculo da adequação de cada indivíduo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-4" target="tQTgviacLXU592D-nfOq-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-4" value="Formar N casais, utilizando as adequações como peso" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-8" target="tQTgviacLXU592D-nfOq-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-8" value="Gerar nova população por cruzamento" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-9" target="tQTgviacLXU592D-nfOq-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="279.9999999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="610" />
+              <mxPoint x="280" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-9" target="tQTgviacLXU592D-nfOq-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-9" value="Executar mutações" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-13" value="x 1000" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="585" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tQTgviacLXU592D-nfOq-14" target="tQTgviacLXU592D-nfOq-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-14" value="Ler dados sobre o problema" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-16" value="Mostrar em tela o gráfico final, com as rotas armazenadas e seu custos em cada view" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="690" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-18" value="Após as 1000 iterações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="411" y="653" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-19" value="De tempo em tempo, botar em uma view a melhor rota obtida e seu custo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="180" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-21" value="" style="endArrow=none;html=1;dashed=1;endFill=0;" edge="1" parent="1" target="tQTgviacLXU592D-nfOq-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="440" as="sourcePoint" />
+            <mxPoint x="270" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-24" value="Início" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="380" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-25" value="Fim" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="720" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tQTgviacLXU592D-nfOq-27" value="&lt;h1&gt;Representação dos Dados&lt;/h1&gt;&lt;p&gt;Os dados são representados como como dicionários duplos. Exemplos:&lt;/p&gt;&lt;p&gt;distance[&#39;SP&#39;][&#39;BSB&#39;]&lt;/p&gt;&lt;p&gt;coordinates[&#39;SP&#39;]&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="450" width="190" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
