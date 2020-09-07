@@ -1,0 +1,65 @@
+{
+    "BA": {
+        "SP": 17,
+        "RJ": 20,
+        "LIMA": 31,
+        "BOG": 47,
+        "SANT": 11, 
+        "CARAC": 51,
+        "BH": 22,
+        "POA": 8,
+        "BSB": 23
+    },
+    "BH": {
+        "SP": 5,
+        "RJ": 3,
+        "LIMA": 36,
+        "BOG": 43,
+        "SANT": 30,
+        "CARAC": 42,
+        "POA": 13,
+        "BSB": 6
+    },
+    "BOG": {
+        "SP": 43,
+        "RJ": 45,
+        "LIMA": 19,
+        "SANT": 43,
+        "CARAC": 10,
+        "POA": 46,
+        "BSB": 37
+    },
+    "BSB": {
+        "SP": 9,
+        "RJ": 9,
+        "LIMA": 32,
+        "SANT": 30,
+        "CARAC": 35,
+        "POA": 16
+    },
+    "CARAC": {
+        "SP": 44,
+        "RJ": 11,
+        "LIMA": 27,
+        "SANT": 49,
+        "POA": 48
+    },
+    "LIMA": {
+        "SP": 35,
+        "RJ": 38,
+        "SANT": 25,
+        "POA": 33
+    },
+    "POA": {
+        "SP": 8,
+        "RJ": 11,
+        "SANT": 19
+    },
+    "RJ": {
+        "SP": 3,
+        "SANT": 29
+    },
+    "SANT": {
+        "SP": 26
+    }
+}
