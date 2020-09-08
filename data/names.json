@@ -1,11 +1,11 @@
 {
-    "SP": ["São Paulo", "Brasil"],
+    "SP": ["Sao Paulo", "Brasil"],
     "LIMA": ["Lima", "Peru"],
-    "BOG": ["Bogotá", "Colômbia"],
+    "BOG": ["Bogota", "Colombia"],
     "RJ": ["Rio de Janeiro", "Brasil"],
     "SANT": ["Santiago", "Chile"],
     "CARAC": ["Caracas", "Venezuela"],
-    "BSB": ["Brasília", "Brasil"],
+    "BSB": ["Brasilia", "Brasil"],
     "BA": ["Buenos Aires", "Argentina"],
     "POA": ["Porto Alegre", "Brasil"],
     "BH": ["Belo Horizonte", "Brasil"]

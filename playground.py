@@ -12,22 +12,38 @@
 import time
 import numpy
 import matplotlib.pyplot as plt
+from random import random
+
+x_values = [1, 2, 3]
+y_values = [1, 2, 3]
+
+fig = plt.figure(figsize=[15, 6])
+map = fig.add_subplot(121)
+map.set_xticks([])
+map.set_yticks([])
+map.set_title('Mapa de Rotas')
 
 
-fig = plt.figure( 1 )
-ax = fig.add_subplot( 111 )
-ax.set_title("My Title")
+curve = fig.add_subplot(122)
 
-im = ax.imshow( numpy.zeros( ( 256, 256, 3 ) ) ) # Blank starting image
-fig.show()
-im.axes.figure.canvas.draw()
+map.plot(x_values, y_values, color=(random(), random(), random(), 0.5), linestyle='dashed', linewidth=2)
+y_values.reverse()
+map.plot(x_values, y_values, color=(.1,.1,.1), linestyle='dashed', linewidth=2, alpha=0.3)
 
-tstart = time.time()
-for a in range( 100 ):
-  data = numpy.random.random( ( 256, 256, 3 ) ) # Random image to display
-  ax.set_title( str( a ) )
-  im.set_data( data )
-  im.axes.figure.canvas.draw()
-  time.sleep(0.5)
+curve.set_title('Evolução dos Custos')
+curve.plot([20, 19, 16, 16, 13, 11, 10, 9.6, 9.4, 8])
 
-print ( 'FPS:', 100 / ( time.time() - tstart ) )
+plt.show()
+
+# y = [1, 4, 9, 16, 25,36,49, 64]
+# x1 = [1, 16, 30, 42,55, 68, 77,88]
+# x2 = [1,6,12,18,28, 40, 52, 65]
+# fig = plt.figure()
+# ax = fig.add_axes([0,0,1,1])
+# l1 = ax.plot(x1,y,'ys-') # solid line with yellow colour and square marker
+# l2 = ax.plot(x2,y,'go--') # dash line with green colour and circle marker
+# ax.legend(labels = ('tv', 'Smartphone'), loc = 'lower right') # legend placed at lower right
+# ax.set_title("Advertisement effect on sales")
+# ax.set_xlabel('medium')
+# ax.set_ylabel('sales')
+# plt.show()
