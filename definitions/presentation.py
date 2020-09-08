@@ -38,6 +38,11 @@ class Graphics:
     def generateCostPlot(self, cost):
         """
         Gera o gráfico de custos
+
+        Params
+        ------
+        cost : list (int)
+            Uma lsita com os custos de cada indivíduo da população
         """
         self.curve.cla()
         self.curve.set_title("Evolucao de Custos")
