@@ -30,9 +30,10 @@ O projeto é organizado em diferentes arquivos, e os dados das cidade foram arma
 Ao final da execução do código, dois gráficos são apresentados: um que ilustra a rota final obtida num mapa e outro que traça a evolução dos custos do *melhor indivíduo* de cada geração com o passar das gerações.
 
 A camada de apresentação do projeto se comunica com a camada lógica por meio do padrão de projeto *Observer*, que garante desacoplamento máximo entre as camadas.
-## 
+## Resultados Obtidos
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzMyMDI4MzMsNDgyNzI1NjA2LC0yMD
-QzMDExMzAxLC00NzMyODc3NzgsMzQwMjA1NzAzLDczMDk5ODEx
-Nl19
+eyJoaXN0b3J5IjpbMjgyNDAyOTY5LDQ4MjcyNTYwNiwtMjA0Mz
+AxMTMwMSwtNDczMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZd
+fQ==
 -->
