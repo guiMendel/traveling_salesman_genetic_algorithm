@@ -21,8 +21,9 @@ Nessa implementação, foram utilizadas três formas diferentes de reprodução:
 - Com a mutação, cada *gene* dessa rota filho (cada cidade) tem uma chance de sofrer uma alteração: nesse caso, uma troca com outro gene.
 - Com o elitismo, o melhor indivíduo de uma geração passa automáticamente, intacto, para a geração seguinte.
 
-O projeto é organizado em 
+O projeto é organizado em diferentes arquivos, e os dados das cidade foram armazenados em arquivos *json*.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1Njc0OTYyNywtMjA0MzAxMTMwMSwtND
-czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbNDgyNzI1NjA2LC0yMDQzMDExMzAxLC00Nz
+MyODc3NzgsMzQwMjA1NzAzLDczMDk5ODExNl19
 -->
