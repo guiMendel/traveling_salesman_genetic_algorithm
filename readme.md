@@ -35,9 +35,9 @@ Todos os testes realizados ao longo da implementação serviram seu papel com ex
 
 Inicialmente o método de elitismo não seria implementado, mas ao final da implementação foi possível constatar, pelos gráficos obtidos, que o custo frequentemente dava saltos e regredia com o passar das gerações.
 Esse evento se dava pois uma boa rota acabava por vezes sofrendo uma piora ao ser cruzada com outra ruim, ou ainda porque uma rota boa poderia acabar estragada por uma mutação aleatória.
-Com a adição do elitismo, se tor
+Com a adição do elitismo se tornou possível garantir que uma geração seria ao menos tão boa quanto sua ascendente.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE5NTQ5MTkyLDQ4MjcyNTYwNiwtMjA0Mz
-AxMTMwMSwtNDczMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZd
-fQ==
+eyJoaXN0b3J5IjpbMTExNjg0MDU2MCw0ODI3MjU2MDYsLTIwND
+MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
+XX0=
 -->
