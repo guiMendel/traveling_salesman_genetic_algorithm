@@ -13,6 +13,7 @@ Cada *indivíduo* dessa população tem sua adequação avaliada para gerar um n
 Em cada geração, alguns indivíduos são selecionados para gerar a geração seguinte por meio das operações genéticas. Quanto mais adequado um indivíduo for, maior sua chance de seleção.
 
 ### A implementação
+O algoritmo foi implementado na linguagem **Python 3.8.5**.
 
 Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
 
@@ -22,6 +23,6 @@ Nessa implementação, foram utilizadas três formas diferentes de reprodução:
 
 O projeto é organizado em 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4NDY0MTQxNSwtMjA0MzAxMTMwMSwtND
+eyJoaXN0b3J5IjpbMTM1Njc0OTYyNywtMjA0MzAxMTMwMSwtND
 czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
 -->
