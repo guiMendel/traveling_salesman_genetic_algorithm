@@ -13,10 +13,15 @@ Cada *indivíduo* dessa população tem sua adequação avaliada para gerar um n
 Em cada geração, alguns indivíduos são selecionados para gerar a geração seguinte por meio das operações genéticas. Quanto mais adequado um indivíduo for, maior sua chance de seleção.
 
 ### A implementação
+
 Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
 
-Com o cruzamento, 2 indivíduos selecionados têm partes de suas rotas cruzadas para formar uma rota filho. Com a mutação, cada *gene* dessa rota filho (cada cidade) tem uma chance de sofrer uma alteração: nesse caso, uma troca com outro gene. Com o elitismo, o melhor indivíduo de uma geração passa automáticamente, intacto, para a geração seguinte.
+- Com o cruzamento, 2 indivíduos selecionados têm partes de suas rotas cruzadas para formar uma rota filho.
+- Com a mutação, cada *gene* dessa rota filho (cada cidade) tem uma chance de sofrer uma alteração: nesse caso, uma troca com outro gene.
+- Com o elitismo, o melhor indivíduo de uma geração passa automáticamente, intacto, para a geração seguinte.
+
+O projeto é organizado em 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzIxNzA5NzEsLTIwNDMwMTEzMDEsLT
-Q3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbMTU4NDY0MTQxNSwtMjA0MzAxMTMwMSwtND
+czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
 -->
