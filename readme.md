@@ -6,8 +6,8 @@ Esta implementação soluciona uma instância do problema do caixeiro viajante, 
 ## O Problema
 Nesta instância do problema do caixeiro viajante, as rotas têm sempre exatamente 11 cidades, sendo a inicial e a final sempre a cidade de Brasília. As cidades intermediárias são uma permutação das cidades de *São Paulo, Lima, Bogotá, Rio de Janeiro, Santiago, Caracas, Buenos Aires, Porto Alegre e Belo Horizonte*.
 ## A Solução
-O **Algoritmo Genético** é um algoritmo de busca inspirado na teoria da evolução darwiniana, em que uma *população* de soluções (cada solução é uma diferente rota) é sujeita a uma série de *operações genéticas*
+O **Algoritmo Genético** é um algoritmo de busca inspirado na teoria da evolução darwiniana, em que uma *população* de soluções (cada solução é uma diferente rota) é sujeita a uma série de *operações genéticas*, assim resultando numa série de *gerações*.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyMTYzNzI5NiwtMjA0MzAxMTMwMSwtND
+eyJoaXN0b3J5IjpbMTcwOTQ4MTYwNywtMjA0MzAxMTMwMSwtND
 czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
 -->
