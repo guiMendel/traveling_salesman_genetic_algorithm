@@ -1,5 +1,5 @@
 # Problema do Caixeiro Viajante com  Algoritmo Genético
-Esta implementação soluciona uma instância do problema do caixeiro viajante, em que a rota começa e termina sempre na cidade de Brasília.
+Esta é uma implementação bem documentada que soluciona uma instância do problema do caixeiro viajante, em que a rota começa e termina sempre na cidade de Brasília.
 
 ![example](https://i.ibb.co/Vq9MyQY/example.png)
 
@@ -33,7 +33,7 @@ O projeto é organizado em diferentes arquivos, e os dados das cidade foram arma
 ![enter image description here](https://i.ibb.co/zJC4XXM/concept-model.png)
 > Um diagrama ilustrando o procedimento adotado pelo programa
 ### Os Gráficos
-Ao final da execução do código, dois gráficos são apresentados: um que ilustra a rota final obtida num mapa e outro que traça a evolução dos custos do *melhor indivíduo* de cada geração com o passar das gerações.
+Ao final da execução do código, dois gráficos são apresentados: um que ilustra a **rota final** obtida num mapa e outro que traça a **evolução dos custos** do *melhor indivíduo* de cada geração com o passar das gerações.
 
 Os gráficos são apresentados pela biblioteca *matplotlib*.
 
@@ -45,7 +45,7 @@ Inicialmente o método de elitismo não seria implementado, mas ao final da impl
 Esse evento se dava pois uma boa rota acabava por vezes sofrendo uma piora ao ser cruzada com outra ruim, ou ainda porque uma rota boa poderia acabar estragada por uma mutação aleatória.
 Com a adição do elitismo se tornou possível garantir que uma geração seria ao menos tão boa quanto sua ascendente.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzU4NDE2Nyw0ODI3MjU2MDYsLTIwND
+eyJoaXN0b3J5IjpbMTc4MzgwNDgyNSw0ODI3MjU2MDYsLTIwND
 MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
 XX0=
 -->
