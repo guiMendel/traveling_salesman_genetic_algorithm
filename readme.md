@@ -13,9 +13,8 @@ Cada *indivíduo* dessa população tem sua adequação avaliada para gerar um n
 Em cada geração, alguns indivíduos são selecionados para gerar a geração seguinte por meio das operações genéticas. Quanto mais adequado um indivíduo for, maior sua chance de seleção.
 
 ### A implementação
-Nessa implementação, foram utilizadas três formas diferentes de reprodução:
-1. Cruzamento
+Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NDcxNDc0OSwtMjA0MzAxMTMwMSwtND
-czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMjI5MDE3NTY5LC0yMDQzMDExMzAxLC00Nz
+MyODc3NzgsMzQwMjA1NzAzLDczMDk5ODExNl19
 -->
