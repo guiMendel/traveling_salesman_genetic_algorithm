@@ -14,7 +14,8 @@ Em cada geração, alguns indivíduos são selecionados para gerar a geração s
 
 ### A implementação
 Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
+Com o cruzamento, 2 indivíduos selecionados têm partes de suas rotas cruzadas para formar uma rota filho.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5MDE3NTY5LC0yMDQzMDExMzAxLC00Nz
-MyODc3NzgsMzQwMjA1NzAzLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbMTE2NDEzNTA3NywtMjA0MzAxMTMwMSwtND
+czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
 -->
