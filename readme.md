@@ -23,8 +23,9 @@ Nessa implementação, foram utilizadas três formas diferentes de reprodução:
 
 O projeto é organizado em diferentes arquivos, e os dados das cidade foram armazenados em arquivos *json*.
 ![enter image description here](https://i.ibb.co/zJC4XXM/concept-model.png)
+> Um diagrama ilustrando o 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDQ1NTAwNTEsNDgyNzI1NjA2LC0yMD
-QzMDExMzAxLC00NzMyODc3NzgsMzQwMjA1NzAzLDczMDk5ODEx
-Nl19
+eyJoaXN0b3J5IjpbNDc1NDM5ODY3LDQ4MjcyNTYwNiwtMjA0Mz
+AxMTMwMSwtNDczMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZd
+fQ==
 -->
