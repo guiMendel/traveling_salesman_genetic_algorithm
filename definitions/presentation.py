@@ -115,4 +115,14 @@ class Graphics:
 
     def getNumberPlottedRoutes(self):
         return self.routes_plotted
+
+    def describeRoute(self, route:list):
+        """
+        Retorna uma string escrevendo a rota
+        """
+
+        route = [self.name[city][0] for city in route]
+        description = ' -> '.join(route)
+
+        return description
         
