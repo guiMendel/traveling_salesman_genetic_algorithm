@@ -22,8 +22,9 @@ Nessa implementação, foram utilizadas três formas diferentes de reprodução:
 - Com o elitismo, o melhor indivíduo de uma geração passa automáticamente, intacto, para a geração seguinte.
 
 O projeto é organizado em diferentes arquivos, e os dados das cidade foram armazenados em arquivos *json*.
-
+![enter image description here](https://i.ibb.co/zJC4XXM/concept-model.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyNzI1NjA2LC0yMDQzMDExMzAxLC00Nz
-MyODc3NzgsMzQwMjA1NzAzLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTE2NDQ1NTAwNTEsNDgyNzI1NjA2LC0yMD
+QzMDExMzAxLC00NzMyODc3NzgsMzQwMjA1NzAzLDczMDk5ODEx
+Nl19
 -->
