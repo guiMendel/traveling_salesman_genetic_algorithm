@@ -14,8 +14,9 @@ Em cada geração, alguns indivíduos são selecionados para gerar a geração s
 
 ### A implementação
 Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
-Com o cruzamento, 2 indivíduos selecionados têm partes de suas rotas cruzadas para formar uma rota filho.
+
+Com o cruzamento, 2 indivíduos selecionados têm partes de suas rotas cruzadas para formar uma rota filho. Com a mutação, cada *gene* dessa rota filho (cada cidade) tem uma chance de sofrer uma alteração: nesse caso, uma troca com outro gene. Com o elitismo, o melhor indivíduo de uma geração passa automáticamente, intacto, para a geração seguinte.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2NDEzNTA3NywtMjA0MzAxMTMwMSwtND
-czMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTEwMzIxNzA5NzEsLTIwNDMwMTEzMDEsLT
+Q3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2XX0=
 -->
