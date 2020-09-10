@@ -13,7 +13,8 @@ Cada *indivíduo* dessa população tem sua adequação avaliada para gerar um n
 Em cada geração, alguns indivíduos são selecionados para gerar a geração seguinte por meio das operações genéticas. Quanto mais adequado um indivíduo for, maior sua chance de seleção.
 
 ### A implementação
-O algoritmo foi implementado na linguagem **Python 3.8.5**.
+O algoritmo foi implementado na linguagem **Python 3.8.5**, de maneira bem modularizada e com uso extensivo de orientação a objetos.
+As bibliotecas *matplotlib.pyplot*, *random* e *pprint*
 
 Nessa implementação, foram utilizadas três formas diferentes de reprodução: **cruzamento**, **mutação** e **elitismo**.
 
@@ -37,7 +38,7 @@ Inicialmente o método de elitismo não seria implementado, mas ao final da impl
 Esse evento se dava pois uma boa rota acabava por vezes sofrendo uma piora ao ser cruzada com outra ruim, ou ainda porque uma rota boa poderia acabar estragada por uma mutação aleatória.
 Com a adição do elitismo se tornou possível garantir que uma geração seria ao menos tão boa quanto sua ascendente.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNjg0MDU2MCw0ODI3MjU2MDYsLTIwND
+eyJoaXN0b3J5IjpbMTE4MzYzNTA5Niw0ODI3MjU2MDYsLTIwND
 MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
 XX0=
 -->
