@@ -33,9 +33,9 @@ A camada de apresentação do projeto se comunica com a camada lógica por meio 
 ## Resultados Obtidos
 Todos os testes realizados ao longo da implementação serviram seu papel com excelência. Ao final do projeto, o programa já estava 100% funcional. Foi necessário ajustar as configurações do algoritmo antes que ele obtivesse sucesso.
 
-Inicialmente o método de elitismo não seria implementado, mas ao final da implementação foi possível constatar pelos gráficos obtidos que o custo eventualmente dava saltos 
+Inicialmente o método de elitismo não seria implementado, mas ao final da implementação foi possível constatar, pelos gráficos obtidos, que o custo frequentemente dava saltos e regredia com o passar das gerações. Esse evento se dava pois uma boa rota acabava por vezes sofrendo
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExMDk4ODQ3Niw0ODI3MjU2MDYsLTIwND
+eyJoaXN0b3J5IjpbLTUxODY1MjEyOCw0ODI3MjU2MDYsLTIwND
 MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
 XX0=
 -->
