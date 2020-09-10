@@ -31,9 +31,9 @@ Ao final da execução do código, dois gráficos são apresentados: um que ilus
 
 A camada de apresentação do projeto se comunica com a camada lógica por meio do padrão de projeto *Observer*, que garante desacoplamento máximo entre as camadas.
 ## Resultados Obtidos
-
+Todos os testes realizados ao longo da implementação serviram seu papel com excelência. Ao final do projeto, o programa já estava 100% funcional. Foi necess
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgyNDAyOTY5LDQ4MjcyNTYwNiwtMjA0Mz
-AxMTMwMSwtNDczMjg3Nzc4LDM0MDIwNTcwMyw3MzA5OTgxMTZd
-fQ==
+eyJoaXN0b3J5IjpbLTQ3ODUwNjIyOSw0ODI3MjU2MDYsLTIwND
+MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
+XX0=
 -->
