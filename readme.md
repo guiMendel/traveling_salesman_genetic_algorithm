@@ -3,6 +3,8 @@ Esta implementação soluciona uma instância do problema do caixeiro viajante, 
 
 ![example](https://i.ibb.co/Vq9MyQY/example.png)
 
+## Como Executar
+Basta ter 
 ## O Problema
 Nesta instância do problema do caixeiro viajante, as rotas têm sempre exatamente 11 cidades, sendo a inicial e a final sempre a cidade de Brasília. As cidades intermediárias são uma permutação das cidades de *São Paulo, Lima, Bogotá, Rio de Janeiro, Santiago, Caracas, Buenos Aires, Porto Alegre e Belo Horizonte*.
 ## A Solução
@@ -30,6 +32,8 @@ O projeto é organizado em diferentes arquivos, e os dados das cidade foram arma
 ### Os Gráficos
 Ao final da execução do código, dois gráficos são apresentados: um que ilustra a rota final obtida num mapa e outro que traça a evolução dos custos do *melhor indivíduo* de cada geração com o passar das gerações.
 
+Os gráficos são apresentados pela biblioteca *matplotlib*.
+
 A camada de apresentação do projeto se comunica com a camada lógica por meio do padrão de projeto *Observer*, que garante desacoplamento máximo entre as camadas.
 ## Resultados Obtidos
 Todos os testes realizados ao longo da implementação serviram seu papel com excelência. Ao final do projeto, o programa já estava 100% funcional. Foi necessário ajustar as configurações do algoritmo antes que ele obtivesse sucesso.
@@ -38,7 +42,7 @@ Inicialmente o método de elitismo não seria implementado, mas ao final da impl
 Esse evento se dava pois uma boa rota acabava por vezes sofrendo uma piora ao ser cruzada com outra ruim, ou ainda porque uma rota boa poderia acabar estragada por uma mutação aleatória.
 Com a adição do elitismo se tornou possível garantir que uma geração seria ao menos tão boa quanto sua ascendente.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5NDgxMDgzMCw0ODI3MjU2MDYsLTIwND
+eyJoaXN0b3J5IjpbLTU5Nzg1MzkwNyw0ODI3MjU2MDYsLTIwND
 MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
 XX0=
 -->
