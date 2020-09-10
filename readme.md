@@ -4,8 +4,8 @@ Esta implementação soluciona uma instância do problema do caixeiro viajante, 
 ![example](https://i.ibb.co/Vq9MyQY/example.png)
 
 ## O Problema
-Nesta instância do problema do caixeiro viajante, as rotas têm sempre exatamente 
+Nesta instância do problema do caixeiro viajante, as rotas têm sempre exatamente 11 cidades, sendo a inicial e a final sempre a cidade de Brasília. As cidades intermediárias são uma permutação das cidades de *São Paulo, Lima, Bogotá, Rio de Janeiro, Santiago, Caracas, Bueno
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDM4MjMwNzMsLTIwNDMwMTEzMDEsLT
+eyJoaXN0b3J5IjpbLTE0OTg0ODI5NjIsLTIwNDMwMTEzMDEsLT
 Q3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2XX0=
 -->
