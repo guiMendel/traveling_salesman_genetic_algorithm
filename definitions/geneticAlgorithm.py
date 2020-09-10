@@ -12,8 +12,8 @@ class PopulationGenerator:
         self.size = size
 
     def __generateRoute(self):
-        midCities = random.sample(self.city_list, len(self.city_list))
-        return ["BSB"] + midCities + ["BSB"]
+        mid_cities = random.sample(self.city_list, len(self.city_list))
+        return ["BSB"] + mid_cities + ["BSB"]
 
     def generatePopulation(self):
         """
@@ -45,7 +45,21 @@ class NaturalSelection:
         self.distance = distance
         self.population = population
 
-    def __getRouteCost(self, route):
+    # Implementação do Padrão de Projeto Observer
+    observers = []
+
+    def subscribe(self, observer_function):
+        self.observers.append(observer_function)
+
+    def notifyAll(self, message):
+        # print(f'Notifying {len(self.observers)} observers...')
+        for observer_function in self.observers:
+            observer_function(message)
+
+    def getPopultaion(self):
+        return self.population
+
+    def __getRouteCost(self, route:list):
         """
         Calcula o valor de adequação de um único indivíduo
         """
@@ -57,7 +71,7 @@ class NaturalSelection:
             cost += self.distance[cityA][cityB]
         return cost
 
-    def fitness(self):
+    def getFitness(self):
         """
         Calcula, armazena e retorna o valor de adequação de cada indivíduo da população
         
@@ -65,15 +79,15 @@ class NaturalSelection:
         -------
         Uma lista de custos por indivíduo na mesma ordem da população recebida
         """
-        fitnessScores = []
+        fitness_scores = []
 
         for individual in self.population:
-            fitnessScores.append(self.__getRouteCost(individual))
+            fitness_scores.append(self.__getRouteCost(individual))
 
-        self.fitnessScores = fitnessScores
-        return fitnessScores
+        self.fitness_scores = fitness_scores
+        return fitness_scores
 
-    def getFittest(self, indices:list):
+    def getFittest(self, indices:list = []):
         """
         Retorna o índice do indivíduo com maior valor de adequação (menor fitness score) da população atual
 
@@ -83,10 +97,33 @@ class NaturalSelection:
         """
 
         # Obtém os fitness scores dos indivíduos selecionados e fica com o índice de menor resultado
-        _, index = min((self.fitnessScores[index], index) for index in indices)
+        if not indices:
+            indices = range(len(self.population))
+        
+        _, index = min((self.fitness_scores[index], index) for index in indices)
         return index
 
-    def selectMatingPool(self, arenaSize:int):
+    def __samplePopulation(self, population_indices:list, sample_size:int, exclude:int):
+        """
+        Um função simples que pega alguns índices da população
+
+        Params
+        ------
+        population_indices : list
+            Lista da qual se fará uma amostra
+        sample_size : int
+            Tamanho da amostra pretendida
+        exclude : int
+            Indica quais índices não devem estar inclusos na amostra
+
+        Return
+        ------
+        Uma lista: a amostra da população
+        """
+
+        return [x for x in random.sample(population_indices, sample_size) if x not in exclude]
+
+    def selectMatingPool(self, arena_size:int):
         """
         Gera uma lista de casais da população, selecionados com base em
         seus valores de adequação
@@ -95,7 +132,7 @@ class NaturalSelection:
 
         Params
         ------
-        arenaSize : int
+        arena_size : int
             O número de indivíduos por batch de seleção. Quanto maior,
             menos aleatório é o resultado. Deve ser maior do que 1
 
@@ -105,18 +142,18 @@ class NaturalSelection:
         da população
         """
 
-        assert hasattr(self, 'fitnessScores'), 'ERRO: impossível selecionar casais antes de realizar o cálculo de adequação'
-        assert arenaSize > 1, 'ERRO: parâmetro "arenaSize" deve ser maior do que 1'
+        assert hasattr(self, 'fitness_scores'), 'ERRO: impossível selecionar casais antes de realizar o cálculo de adequação'
+        assert arena_size > 1, 'ERRO: parâmetro "arenaSize" deve ser maior do que 1'
         # Pega os índices da população
-        populationIndices = range(len(self.population))
+        population_indices = range(len(self.population))
         
         # Um função simples que pega alguns índices da população e os alimenta para a função getFittest
         # O parâmetro especifica um índice que não deve ser selecionado
         # Retorna um índice da população
-        selectParent = lambda exclude : self.getFittest(x for x in random.sample(populationIndices, arenaSize) if x!= exclude)
+        selectParent = lambda exclude : self.getFittest(self.__samplePopulation(population_indices, arena_size, [exclude]))
 
         couples = []
-        for _ in populationIndices:
+        for _ in population_indices:
             parentA = selectParent(None)
             parentB = selectParent(parentA)
                 
@@ -141,24 +178,32 @@ class NaturalSelection:
             # As rotas todas começam e terminam com BSB. Sendo assim, vamos retirar os BSBs dos pais e recolocar no filho.
             indA, indB = tuple(map(lambda idx : self.population[idx][1:-1], couple))
             length = len(indA)
+            # print(length)
+            # pprint(indA)
+            # pprint(indB)
 
             # Definimos o início e o fim da parcela de cromossomos que
             # vai ser transmitida do indivíduo A para o B
             geneA, geneB = [random.randint(0, length), random.randint(0, length)]
             # Garantimos que haverá algum cruzamento
-            while (geneB == geneA or abs(geneB-geneA) == 9):
+            # print(geneA, geneB)
+            while geneB == geneA or abs(geneB-geneA) == 9:
                 geneB = random.randint(0, length)
             # Ordenamos de fato o começo e fim
             start, end = sorted((geneA, geneB))
+            # print(start, end)
 
-            # Insere a sequência no gene B
-            rawGenes = indB[:start] + indA[start:end] + indB[start:]
-            # Remove os cromossomos duplicados
-            genes = [cromossome for step, cromossome in enumerate(rawGenes) if cromossome not in rawGenes[:step]]
+            # # Insere a sequência no gene B
+            # raw_genes = indB[:start] + indA[start:end] + indB[start:]
+            # # Remove os cromossomos duplicados
+            # genes = [cromossome for step, cromossome in enumerate(raw_genes) if cromossome not in raw_genes[:step]]
+
+            genes_slice = indA[start:end]
+            genes = genes_slice + [gene for gene in indB if gene not in genes_slice]
+
             return ["BSB"] + genes + ["BSB"]
 
-
-    def nextGeneration(self, couples:list):
+    def breed(self, couples:list):
         """
         Realiza a operação genética de cruzamento com os casais
         fornecidos. Retorna e armazena a população gerada.
@@ -229,8 +274,68 @@ class NaturalSelection:
         """
 
         return [self.__mutateWithChance(idx, rate) for idx in range(len(self.population))]
+
+    def __advanceGeneration(self, arena_size:int, mutation_rate:float):
+        """
+        Realiza uma iteração do algoritmo genético
+
+        Realiza: avaliação de adequação, seleção de casais, cruzamento e mutação. Armazena e retorna a população resultado.
+
+        Returns
+        -------
+        Uma lista de string: a nova população.
+        """
+
+        # Etapa de avaliação
+        self.getFitness()
+
+        # Etapa de seleção de casais
+        couples = self.selectMatingPool(arena_size)
+
+        # Etapa de cruzamento
+        self.breed(couples)
+
+        # Etapa de mutação
+        self.mutatePopulationWithChance(mutation_rate)
+        
+        return self.population
+
+    def geneticAlgorithm(self, population_size:int, city_list:int, generations:int, arena_size:int, mutation_rate:float):
+        """
+        Executa o algoritmo genético sobre a população do modelo interno com um número fornecido de gerações
+
+        Params
+        ------
+        generations : int
+            Define quantas gerações devem ser executadas
+        
+        Returns
+        -------
+        Uma lista de string: o melhor indivíduo obtido
+        """
+
+
+        # Uma função simples que notifica os observadores do progresso de cada geração
+        reportProgress = lambda gen : self.notifyAll({ "generation": gen, "best_cost": self.fitness_scores[self.getFittest()], "best_route": self.population[self.getFittest()]})
+
+        self.getFitness()
+        reportProgress(0)
+        for generation in range(generations):
+            self.__advanceGeneration(arena_size, mutation_rate)
+            self.getFitness()
+            reportProgress(generation+1)
             
+        the_fittest = self.population[self.getFittest()]
+
+        return the_fittest
+            
+    def testAdvanceGeneration(self, arena_size:int, mutation_rate:float):
+        return self.__advanceGeneration(arena_size, mutation_rate)            
     def testCrossover(self, couple:tuple):
         return self.__crossover(couple)
     def testMutateWithChance(self, index:int, rate:float):
         return self.__mutateWithChance(index, rate)
+    def testGetRouteCost(self, route:list):
+        return self.__getRouteCost(route)
+    def testSamplePopulation(self, population:list, sample_size:int, exclude:int):
+        return self.__samplePopulation(population, sample_size, exclude)
