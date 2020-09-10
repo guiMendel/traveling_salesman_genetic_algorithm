@@ -5,7 +5,25 @@ class Graphics:
     """
     Tem por função lidar com a apresentação dos gráficos em tela
     """
+    
     def __init__(self, routes_to_display:int, generations:int, coordinates:dict, names:dict, width:float, height:float):
+        """
+        Params
+        ------
+        routes_to_display : int
+            Determina quantas rotas devem aparecer no gráfico final
+        generations : int
+            Determina quantas gerações o modelo executará
+        coordinates : dict ( tuple (float))
+            Um dicionário que armazena as coordenadas de cada cidade (utilizadas somente para apresentação)
+        names : dict ( tuple (string))
+            Um dicionário com os nomes de cada cidade escritos por extenso
+        width : float
+            A largura da tela de gráficos
+        height : float
+            A altura da tela de gráficos
+        """
+
         self.fig = plt.figure(figsize=[width, height])
         
         self.map = self.fig.add_subplot(121)
@@ -34,11 +52,29 @@ class Graphics:
     routes_plotted = 0
 
     def __randomColor(self, alpha:float):
+        """
+        Gera uma cora RGB aleatória, mas os valores só vão de 0 a 0,4
+
+        Params
+        ------
+        alpha : float
+            Determina a transparência das cores
+
+        Returns
+        -------
+        Uma tupla de inteiros: a cor gerada
+        """
+        
         return (random()*0.4, random()*0.4, random()*0.4, alpha)
 
     def addRoutePlot(self, route):
         """
         Adiciona uma rota ao gráfico de rotas
+
+        Params
+        ------
+        route : list (str)
+            A rota a ser adicionada
         """
 
         # Pula se não houver rota
@@ -62,6 +98,7 @@ class Graphics:
         cost : list (int)
             Uma lsita com os custos de cada indivíduo da população
         """
+
         self.curve.cla()
         self.curve.set_title("Evolucao de Custos")
         self.curve.set_ylabel("Custo")
@@ -72,6 +109,7 @@ class Graphics:
         """
         Apresenta os gráficos em tela
         """
+
         # Imprime as cidades
         coordinateValues = self.coordinates.values()
         coordX, coordY = zip(*coordinateValues)
@@ -88,6 +126,17 @@ class Graphics:
 
     # Para ser utilizada como observer com o sujeito Natural Selection
     def receiveData(self, message):
+        """
+        Método do padrão de projeto Observer, utilizado para ser inscrito num sujeito como observer
+
+        Recebe os relatórios de progresso da camada de lógica e os processa internamente
+
+        Params
+        ------
+        message : dict
+            Um dicionário com campos determinados em tempo de execução
+        """
+        
         # Destrincha a mensagem
         generation, cost, route = message["generation"], message["best_cost"], message["best_route"]
 
@@ -104,6 +153,10 @@ class Graphics:
             self.last_route = route
     
     def generateGraph(self):
+        """
+        Gera o gráfico final a partir dos dados armazenadas internamente
+        """
+
         # Imprime a última geração
         self.addRoutePlot(self.last_route)
 
@@ -111,9 +164,17 @@ class Graphics:
         self.generateCostPlot(self.generation_cost)
 
     def getGenerationCosts(self):
+        """
+        Retorna a lista de custos por geração
+        """
+
         return self.generation_cost
 
     def getNumberPlottedRoutes(self):
+        """
+        Retorna quantas vezes a função addRoute() foi invocada
+        """
+
         return self.routes_plotted
 
     def describeRoute(self, route:list):

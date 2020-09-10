@@ -149,7 +149,7 @@ print('OK')
 
 print('Múltiplas iterações automáticas de geração', end='...')
 population_before = population
-the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate, True)
+the_fittest = model.geneticAlgorithm(generations, arena_size, mutation_rate, True)
 population = model.getPopultaion()
 assert len(population)==population_size, 'ERRO: Tamanho da população após múltiplas gerações automáticas está em desacordo com o configurado'
 assert population_before!=population, 'ERRO: Gerações automáticas falharam em alterar a população'
@@ -169,7 +169,7 @@ model.subscribe(graphics.receiveData)
 # Salva o custo antigo
 old_cost = model.getFitness()[model.getFittest()]
 
-the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate, True)
+the_fittest = model.geneticAlgorithm(generations, arena_size, mutation_rate, True)
 # Gera o gráfico
 graphics.generateGraph()
 # Pega os custos registrados
@@ -180,6 +180,6 @@ assert len(generation_costs) == generations + 1, f'ERRO: A camada de apresentaç
 assert generation_costs[-1] == final_cost, f'ERRO: O custo final registrado na apresentação difere do modelo interno.\nCustos registrados: {generation_costs}\nCusto no modelo: {final_cost}'
 assert generation_costs[0] == old_cost, f'ERRO: O custo inicial registrado na apresentação difere do modelo interno\nCustos registrados: {generation_costs}\nCusto no modelo: {old_cost}'
 assert graphics.getNumberPlottedRoutes() == routes_to_plot, f'ERRO: A quantidade de rotas impressas difere da solicitada\nImpressas: {graphics.getNumberPlottedRoutes()}\nSolicitadas: {routes_to_plot}'
-print(f'Melhor indivíduo: {the_fittest}\nCusto: {final_cost}')
+# print(f'Melhor indivíduo: {the_fittest}\nCusto: {final_cost}')
 graphics.display()
 print('OK')

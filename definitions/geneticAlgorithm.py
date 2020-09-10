@@ -6,12 +6,27 @@ class PopulationGenerator:
     """
     
     def __init__(self, size, city_list):
+        """
+        Params
+        ------
+            size : int
+                Define quantos indivíduos devem ser gerados pela população
+            city_list : list (str)
+                Define quais cidades formam as rotas de cada indivíduo
+        """
         self.city_list = list(city_list)
         # Começamos e terminamos em BSB, logo as cidades do meio não podem incluir BSB
         self.city_list.remove("BSB")
         self.size = size
 
     def __generateRoute(self):
+        """
+        Gera uma rota, que é um indivíduo da população
+
+        Returns
+        -------
+        Uma lista de string: o indivíduo
+        """
         mid_cities = random.sample(self.city_list, len(self.city_list))
         return ["BSB"] + mid_cities + ["BSB"]
 
@@ -37,11 +52,14 @@ class NaturalSelection:
 
     def __init__(self, distance, population):
         """
-        Parameters
+        Params
         ----------
         distance : dict (dict (str=>int))
             Um dicionário que associa cada par de cromossomo à um custo (a distância entre as cidades)
+        population : list ( list (str))
+            A população a ser sujeito ao algoritmo genético
         """
+        
         self.distance = distance
         self.population = population
 
@@ -49,20 +67,52 @@ class NaturalSelection:
     observers = []
 
     def subscribe(self, observer_function):
+        """
+        Método do padrão de projeto Observer que permite a inscrição de um novo observer
+
+        Params
+        ------
+        observer_function : function
+            A função que representa o observer
+        """
+
         self.observers.append(observer_function)
 
     def notifyAll(self, message):
+        """
+        Notifica todos os observers com uma mensagem
+
+        Params
+        ------
+        message : dict
+            Um dicionário com campos determiandos dinamicamente. Representa a mensagem a ser transmitida.
+        """
+
         # print(f'Notifying {len(self.observers)} observers...')
         for observer_function in self.observers:
             observer_function(message)
 
     def getPopultaion(self):
+        """
+        Retorna a população armazenada no modelo interno.
+        """
+
         return self.population
 
     def __getRouteCost(self, route:list):
         """
-        Calcula o valor de adequação de um único indivíduo
+        Calcula o valor de adequação de um único indivíduo.
+
+        Params
+        ------
+        route : list (str)
+            A rota que representa o indivíduo a ser avaliado
+
+        Returns
+        -------
+        Um inteiro: o resultado da avaliação, o custo da rota.
         """
+
         cost = 0
         # Itera pela lista em pares
         for cityA, cityB in zip(route, route[1:]):
@@ -79,6 +129,7 @@ class NaturalSelection:
         -------
         Uma lista de custos por indivíduo na mesma ordem da população recebida
         """
+        
         fitness_scores = []
 
         for individual in self.population:
@@ -91,9 +142,14 @@ class NaturalSelection:
         """
         Retorna o índice do indivíduo com maior valor de adequação (menor fitness score) da população atual
 
+        Params
+        ------
+        indices : list (int)
+            Uma lista com os índices dos indivíduos a serem considerados na seleção
+
         Returns
         -------
-        O índice associado ao indivíduo de menor fitness score
+        O índice associado ao indivíduo de menor valor de adequação
         """
 
         # Obtém os fitness scores dos indivíduos selecionados e fica com o índice de menor resultado
@@ -116,7 +172,7 @@ class NaturalSelection:
         exclude : int
             Indica quais índices não devem estar inclusos na amostra
 
-        Return
+        Returns
         ------
         Uma lista: a amostra da população
         """
@@ -216,6 +272,7 @@ class NaturalSelection:
         Params
         ------
         couples : list ( tuple (int))
+            Os casais que serão cruzados
         
         Returns
         -------
@@ -288,6 +345,17 @@ class NaturalSelection:
 
         Realiza: avaliação de adequação, seleção de casais, cruzamento e mutação. Armazena e retorna a população resultado.
 
+        Params
+        ------
+        arena_size : int
+            O tamanho dos grupos dos quais serão selecinados os indivíduos que cruzarão
+
+        mutation_rate : float
+            A taxa de mutação por indivíduo
+
+        leak_alfa : bool
+            Determina se o melhor indivíduo de uma geração estará presenta na seguinte
+
         Returns
         -------
         Uma lista de string: a nova população.
@@ -315,7 +383,7 @@ class NaturalSelection:
         
         return self.population
 
-    def geneticAlgorithm(self, population_size:int, city_list:int, generations:int, arena_size:int, mutation_rate:float, leak_alfa:bool):
+    def geneticAlgorithm(self, generations:int, arena_size:int, mutation_rate:float, leak_alfa:bool):
         """
         Executa o algoritmo genético sobre a população do modelo interno com um número fornecido de gerações
 
@@ -323,6 +391,15 @@ class NaturalSelection:
         ------
         generations : int
             Define quantas gerações devem ser executadas
+
+        arena_size : int
+            O tamanho dos grupos dos quais serão selecinados os indivíduos que cruzarão
+
+        mutation_rate : float
+            A taxa de mutação por indivíduo
+
+        leak_alfa : bool
+            Determina se o melhor indivíduo de uma geração estará presenta na seguinte
         
         Returns
         -------
@@ -345,12 +422,32 @@ class NaturalSelection:
         return the_fittest
             
     def testAdvanceGeneration(self, arena_size:int, mutation_rate:float, leak_alfa:bool):
+        """
+        Uma interface para testar o método interno de mesmo nome
+        """
+        
         return self.__advanceGeneration(arena_size, mutation_rate, leak_alfa)            
     def testCrossover(self, couple:tuple):
+        """
+        Uma interface para testar o método interno de mesmo nome
+        """
+        
         return self.__crossover(couple)
     def testMutateWithChance(self, index:int, rate:float):
+        """
+        Uma interface para testar o método interno de mesmo nome
+        """
+        
         return self.__mutateWithChance(index, rate)
     def testGetRouteCost(self, route:list):
+        """
+        Uma interface para testar o método interno de mesmo nome
+        """
+        
         return self.__getRouteCost(route)
     def testSamplePopulation(self, population:list, sample_size:int, exclude:int):
+        """
+        Uma interface para testar o método interno de mesmo nome
+        """
+        
         return self.__samplePopulation(population, sample_size, exclude)
