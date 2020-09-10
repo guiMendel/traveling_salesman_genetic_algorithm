@@ -27,9 +27,9 @@ O projeto é organizado em diferentes arquivos, e os dados das cidade foram arma
 ![enter image description here](https://i.ibb.co/zJC4XXM/concept-model.png)
 > Um diagrama ilustrando o procedimento adotado pelo programa
 ### Os Gráficos
-Ao final da execução do código, dois gráficos são apre
+Ao final da execução do código, dois gráficos são apresentados: um que ilustra a rota final obtida num mapa e outro que traça a evolução dos custos do *melhor indivíduo* de cada geração com o passar das gerações.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mjk0MjA3ODQsNDgyNzI1NjA2LC0yMD
-QzMDExMzAxLC00NzMyODc3NzgsMzQwMjA1NzAzLDczMDk5ODEx
-Nl19
+eyJoaXN0b3J5IjpbMTcyOTgwMDk3NSw0ODI3MjU2MDYsLTIwND
+MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
+XX0=
 -->
