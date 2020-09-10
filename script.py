@@ -43,7 +43,7 @@ old_fittest = model.population[model.getFittest()]
 print(f'\nO melhor indivíduo da geração inicial faz a rota: {graphics.describeRoute(old_fittest)}\nSeu custo é: {old_cost}\nRota em lista: {old_fittest}')
 
 # Executa a evolução
-the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate, True)
+the_fittest = model.geneticAlgorithm(generations, arena_size, mutation_rate, True)
 
 # Gera o gráfico
 graphics.generateGraph()
