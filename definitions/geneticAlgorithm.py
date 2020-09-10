@@ -123,7 +123,7 @@ class NaturalSelection:
 
         return [x for x in random.sample(population_indices, sample_size) if x not in exclude]
 
-    def selectMatingPool(self, arena_size:int):
+    def selectMatingPool(self, arena_size:int, pool_size:int):
         """
         Gera uma lista de casais da população, selecionados com base em
         seus valores de adequação
@@ -135,6 +135,9 @@ class NaturalSelection:
         arena_size : int
             O número de indivíduos por batch de seleção. Quanto maior,
             menos aleatório é o resultado. Deve ser maior do que 1
+
+        pool_size : int
+            Quantos casais deve gerar
 
         Returns
         -------
@@ -153,7 +156,7 @@ class NaturalSelection:
         selectParent = lambda exclude : self.getFittest(self.__samplePopulation(population_indices, arena_size, [exclude]))
 
         couples = []
-        for _ in population_indices:
+        for _ in range(pool_size):
             parentA = selectParent(None)
             parentB = selectParent(parentA)
                 
@@ -206,7 +209,9 @@ class NaturalSelection:
     def breed(self, couples:list):
         """
         Realiza a operação genética de cruzamento com os casais
-        fornecidos. Retorna e armazena a população gerada.
+        fornecidos. Retorna a população gerada.
+
+        O melhor indivíduo da geração passada permanece nesta.
 
         Params
         ------
@@ -218,8 +223,8 @@ class NaturalSelection:
         cruzamentos.
         """
 
-        self.population = list(map(self.__crossover, couples))
-        return self.population
+
+        return list(map(self.__crossover, couples))
 
     def __mutateWithChance(self, index:int, rate:float):
         """
@@ -241,10 +246,11 @@ class NaturalSelection:
 
         # Ignoramos as cidades BSB no início e no final
         individual = self.population[index][1:-1]
+        # print(individual)
 
         for geneA in range(len(individual)):
             # Aplicamos a chance
-            if random.random() <= rate:
+            if random.random() < rate:
                 # Encontramos outro índice, diferente do atual
                 while True:
                     geneB = random.randint(0, len(individual)-1)
@@ -253,6 +259,7 @@ class NaturalSelection:
                 individual[geneA], individual[geneB] = individual[geneB], individual[geneA]
         
         # Inserimos BSBs de volta
+        # print(individual)
         individual = ["BSB"] + individual + ["BSB"]
         
         # Atualiza no modelo interno
@@ -275,7 +282,7 @@ class NaturalSelection:
 
         return [self.__mutateWithChance(idx, rate) for idx in range(len(self.population))]
 
-    def __advanceGeneration(self, arena_size:int, mutation_rate:float):
+    def __advanceGeneration(self, arena_size:int, mutation_rate:float, leak_alfa:bool):
         """
         Realiza uma iteração do algoritmo genético
 
@@ -289,18 +296,26 @@ class NaturalSelection:
         # Etapa de avaliação
         self.getFitness()
 
+        # Vazamento do melhor indivíduo
+        if leak_alfa:
+            alfa = self.population[self.getFittest()]
+
         # Etapa de seleção de casais
-        couples = self.selectMatingPool(arena_size)
+        couples = self.selectMatingPool(arena_size, len(self.population) - int(leak_alfa))
 
         # Etapa de cruzamento
-        self.breed(couples)
+        self.population = self.breed(couples)
 
         # Etapa de mutação
         self.mutatePopulationWithChance(mutation_rate)
         
+        # Insere novamente o alfa
+        if leak_alfa:
+            self.population.append(alfa)
+        
         return self.population
 
-    def geneticAlgorithm(self, population_size:int, city_list:int, generations:int, arena_size:int, mutation_rate:float):
+    def geneticAlgorithm(self, population_size:int, city_list:int, generations:int, arena_size:int, mutation_rate:float, leak_alfa:bool):
         """
         Executa o algoritmo genético sobre a população do modelo interno com um número fornecido de gerações
 
@@ -321,7 +336,7 @@ class NaturalSelection:
         self.getFitness()
         reportProgress(0)
         for generation in range(generations):
-            self.__advanceGeneration(arena_size, mutation_rate)
+            self.__advanceGeneration(arena_size, mutation_rate, leak_alfa)
             self.getFitness()
             reportProgress(generation+1)
             
@@ -329,8 +344,8 @@ class NaturalSelection:
 
         return the_fittest
             
-    def testAdvanceGeneration(self, arena_size:int, mutation_rate:float):
-        return self.__advanceGeneration(arena_size, mutation_rate)            
+    def testAdvanceGeneration(self, arena_size:int, mutation_rate:float, leak_alfa:bool):
+        return self.__advanceGeneration(arena_size, mutation_rate, leak_alfa)            
     def testCrossover(self, couple:tuple):
         return self.__crossover(couple)
     def testMutateWithChance(self, index:int, rate:float):

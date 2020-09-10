@@ -88,7 +88,7 @@ print('\nETAPA 4: SELEÇÃO')
 # Configuração
 
 print('Selecionando casais', end='...')
-couples = model.selectMatingPool(arena_size)
+couples = model.selectMatingPool(arena_size, population_size)
 assert len(couples)==population_size, 'ERRO: Quantidade de casais gerados não condiz com o tamanho da população'
 print('OK')
 
@@ -123,7 +123,7 @@ genes_after = model.population[0]
 assert sorted(genes_before) == sorted(population[0]), f'ERRO: Mutação gerou indivíduo inválido.\nAntes: {genes_before}\nDepois: {population[0]}'
 assert genes_before != genes_after, 'ERRO: Mutação obrigatória não mudou nada'
 
-genes_before = population[0]
+genes_before = model.population[0]
 model.testMutateWithChance(0, 0.0)
 genes_after = model.population[0]
 assert genes_before == genes_after, 'ERRO: Mutação proibida mudou algo'
@@ -142,14 +142,14 @@ print('\nETAPA 7: GERAÇÕES AUTOMÁTICAS')
 
 print('Uma iteração automática de geração', end='...')
 population_before = population
-population = model.testAdvanceGeneration(arena_size, mutation_rate)
+population = model.testAdvanceGeneration(arena_size, mutation_rate, True)
 assert len(population)==population_size, 'ERRO: Tamanho da população após geração automática está em desacordo com o configurado'
 assert population_before!=population, 'ERRO: Geração automática falhou em alterar a população'
 print('OK')
 
 print('Múltiplas iterações automáticas de geração', end='...')
 population_before = population
-the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate)
+the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate, True)
 population = model.getPopultaion()
 assert len(population)==population_size, 'ERRO: Tamanho da população após múltiplas gerações automáticas está em desacordo com o configurado'
 assert population_before!=population, 'ERRO: Gerações automáticas falharam em alterar a população'
@@ -169,7 +169,7 @@ model.subscribe(graphics.receiveData)
 # Salva o custo antigo
 old_cost = model.getFitness()[model.getFittest()]
 
-the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate)
+the_fittest = model.geneticAlgorithm(population_size, city_list, generations, arena_size, mutation_rate, True)
 # Gera o gráfico
 graphics.generateGraph()
 # Pega os custos registrados

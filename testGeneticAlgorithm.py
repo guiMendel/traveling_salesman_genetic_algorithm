@@ -20,8 +20,8 @@ city_list = list(coordinates.keys())
 population = [
     ['BSB', 'BA', 'CARAC'],                 # 74
     ['BSB', 'LIMA', 'BOG', 'CARAC'],        # 61
-    ['BSB', 'BOG', 'SP', 'POA', 'BSB'],      # 104
-    ['BSB', 'BH', 'RJ', 'SP', 'POA', 'BA', 'SANT', 'LIMA', 'BOG', 'CARAC', 'BSB']
+    ['BSB', 'BOG', 'SP', 'POA', 'BSB']      # 104
+    # ['BSB', 'BH', 'RJ', 'SP', 'POA', 'BA', 'SANT', 'LIMA', 'BOG', 'CARAC', 'BSB']
  ]
 
 # Inicia modelo
@@ -35,7 +35,7 @@ cost = model.testGetRouteCost(population[1])
 assert cost == 61, 'ERRO: Erro no cálculo do custo rota'
 cost = model.testGetRouteCost(population[2])
 assert cost == 104, 'ERRO: Erro no cálculo do custo rota'
-print(model.testGetRouteCost(population[3]))
+# print(model.testGetRouteCost(population[3]))
 
 # Cáluclo dos custos da população
 cost = model.getFitness()
@@ -66,7 +66,7 @@ assert 0 not in sample, 'ERRO: Amostra possui elemento excluído'
 model.population = PopulationGenerator(5, city_list).generatePopulation()
 model.getFitness()
 # pprint(sorted((c, x) for x, c in enumerate(model.getFitness())))
-couples = model.selectMatingPool(2)
+couples = model.selectMatingPool(2, 5)
 # print(couples)
 
 # Cruzamento
