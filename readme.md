@@ -4,7 +4,10 @@ Esta implementação soluciona uma instância do problema do caixeiro viajante, 
 ![example](https://i.ibb.co/Vq9MyQY/example.png)
 
 ## Como Executar
-Basta ter 
+Basta ter a linguagem *python* instalada em sua máquina, navegar para a pasta do repositório via terminal e executar o seguinte comando:
+```python
+    python
+
 ## O Problema
 Nesta instância do problema do caixeiro viajante, as rotas têm sempre exatamente 11 cidades, sendo a inicial e a final sempre a cidade de Brasília. As cidades intermediárias são uma permutação das cidades de *São Paulo, Lima, Bogotá, Rio de Janeiro, Santiago, Caracas, Buenos Aires, Porto Alegre e Belo Horizonte*.
 ## A Solução
@@ -42,7 +45,7 @@ Inicialmente o método de elitismo não seria implementado, mas ao final da impl
 Esse evento se dava pois uma boa rota acabava por vezes sofrendo uma piora ao ser cruzada com outra ruim, ou ainda porque uma rota boa poderia acabar estragada por uma mutação aleatória.
 Com a adição do elitismo se tornou possível garantir que uma geração seria ao menos tão boa quanto sua ascendente.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5Nzg1MzkwNyw0ODI3MjU2MDYsLTIwND
+eyJoaXN0b3J5IjpbLTUwMzA2ODQyOSw0ODI3MjU2MDYsLTIwND
 MwMTEzMDEsLTQ3MzI4Nzc3OCwzNDAyMDU3MDMsNzMwOTk4MTE2
 XX0=
 -->
